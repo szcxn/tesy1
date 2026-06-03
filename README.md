@@ -14,8 +14,6 @@ A mobile-friendly web quiz for Reproductive Block MCQs — all years combined.
 - Repeated questions across batches are flagged with 🔄
 - Shuffle mode, score ring, mistake review, retry wrong answers
 - **Browse mode** — read all questions with answers visible
-- **شرح لكل إجابة** — شرح طبي مبسّط يظهر تحت كل سؤال في وضع الاختبار والمراجعة والتصفّح
-- **توقّع الذكاء الاصطناعي** — للأسئلة بلا إجابة أو التي تبدو إجابتها خاطئة، يظهر توقّع مع تبرير موجز (مع اعتماد إجابة الموقع كأساس)
 - Fully responsive — works on mobile, tablet, and desktop
 
 ## How to Deploy on GitHub Pages
