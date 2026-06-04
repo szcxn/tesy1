@@ -14,8 +14,9 @@ A mobile-friendly web quiz for Reproductive Block MCQs — all years combined.
 - Repeated questions across batches are flagged with 🔄
 - Shuffle mode, score ring, mistake review, retry wrong answers
 - **Browse mode** — read all questions with answers visible
-- **شرح لكل إجابة** — شرح طبي مبسّط يظهر تحت كل سؤال في وضع الاختبار والمراجعة والتصفّح
-- **توقّع الذكاء الاصطناعي** — للأسئلة بلا إجابة أو التي تبدو إجابتها خاطئة، يظهر توقّع مع تبرير موجز (مع اعتماد إجابة الموقع كأساس)
+- **Answer explanations** — a simple medical explanation shown under every question in quiz, review, and browse modes
+- **AI prediction** — for questions with no answer or a seemingly wrong answer, an AI prediction with a brief rationale is shown (the site's own answer is kept as the baseline)
+- **Med 445 — King Saud University** logo in the corner
 - Fully responsive — works on mobile, tablet, and desktop
 
 ## How to Deploy on GitHub Pages
