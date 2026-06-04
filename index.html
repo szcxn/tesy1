@@ -58,37 +58,6 @@ body[data-theme="light"] {
   --grad-b: #e0517a;
 }
 
-/* ───────── THEME: EXAMPLIFY (clean exam look, like the real interface) ───────── */
-body[data-theme="examplify"] {
-  --bg:       #eef1f4;
-  --surface:  #ffffff;
-  --card:     #ffffff;
-  --border:   #d3d8df;
-  --border2:  #bcc3cc;
-  --accent:   #2f6db0;
-  --accent2:  #2f6db0;
-  --accent3:  #2e9e6b;
-  --gold:     #b9770f;
-  --text:     #2b3138;
-  --sub:      #6b7280;
-  --muted:    #c3c9d2;
-  --correct:  #2e9e6b;
-  --wrong:    #cf4646;
-  --accent-rgb:  47,109,176;
-  --correct-rgb: 46,158,107;
-  --wrong-rgb:   207,70,70;
-  --gold-rgb:    185,119,15;
-  --grad-a: #2f6db0;
-  --grad-b: #2f6db0;
-  --opt-radius: 4px;
-  --r: 4px;
-  --r-sm: 4px;
-  /* Examplify chrome colors */
-  --ex-navy:   #243746;
-  --ex-navy2:  #2d4456;
-  --ex-flag:   #e8a02c;
-  --ex-flagtx: #5a3d00;
-}
 html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
@@ -337,7 +306,6 @@ body {
 .opt:disabled { cursor: default; }
 .opt .ol { font-size: 12px; font-weight: 700; color: var(--sub); min-width: 18px; flex-shrink: 0; padding-top: 1px; }
 .opt .ol::after { content: '.'; }
-body[data-theme="examplify"] .opt .ol::after { content: ''; }
 .opt .ot { flex: 1; }
 .opt.correct { border-color: var(--correct); background: rgba(var(--correct-rgb),.09); }
 .opt.correct .ol { color: var(--correct); }
@@ -346,224 +314,9 @@ body[data-theme="examplify"] .opt .ol::after { content: ''; }
 .opt.reveal  { border-color: var(--correct); background: rgba(var(--correct-rgb),.04); }
 .opt.reveal .ol { color: var(--correct); }
 
-/* ───────── EXAMPLIFY look: flat rows, circular letter badges ───────── */
-body[data-theme="examplify"] .opt {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
-}
-body[data-theme="examplify"] .opt .ol {
-  width: 26px; height: 26px;
-  min-width: 26px;
-  border-radius: 50%;
-  border: 1px solid var(--border2);
-  background: #fff;
-  color: var(--sub);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px; padding: 0;
-}
-body[data-theme="examplify"] .opt:hover:not(:disabled) {
-  border-color: var(--accent);
-  background: rgba(var(--accent-rgb),.05);
-}
-body[data-theme="examplify"] .opt.sel-blue {
-  border: 2px solid var(--accent);
-  box-shadow: inset 4px 0 0 var(--accent);
-}
-body[data-theme="examplify"] .opt.correct {
-  border-color: var(--correct);
-  box-shadow: inset 4px 0 0 var(--correct);
-}
-body[data-theme="examplify"] .opt.correct .ol { border-color: var(--correct); color: var(--correct); }
-body[data-theme="examplify"] .opt.wrong {
-  border-color: var(--wrong);
-  box-shadow: inset 4px 0 0 var(--wrong);
-}
-body[data-theme="examplify"] .opt.wrong .ol { border-color: var(--wrong); color: var(--wrong); }
-body[data-theme="examplify"] .opt.reveal { box-shadow: inset 4px 0 0 var(--correct); }
-/* soften the big card hover-lift for a calmer exam feel */
-body[data-theme="examplify"] .bc:hover,
-body[data-theme="examplify"] .sc:hover { transform: none; }
 /* light themes: subtle shadow on white surfaces for depth */
 body[data-theme="light"] .bc,
-body[data-theme="light"] .sc,
-body[data-theme="examplify"] .bc,
-body[data-theme="examplify"] .sc { box-shadow: 0 1px 3px rgba(0,0,0,.05); }
-
-/* ═══════════ EXAMPLIFY SIMULATION CHROME ═══════════ */
-/* All chrome is hidden by default; only shows in examplify theme */
-.ex-topbar, .ex-simnote, .ex-flag, .ex-answers-label, .ex-foot-info { display: none; }
-
-body[data-theme="examplify"] #quiz {
-  background: var(--bg);
-  border: 1px solid var(--border2);
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,.10);
-  margin: 4px 0 12px;
-}
-
-/* Top navy exam bar */
-body[data-theme="examplify"] .ex-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  background: linear-gradient(180deg, var(--ex-navy2), var(--ex-navy));
-  color: #dfe7ee;
-  padding: 9px 14px 9px 120px;
-  font-size: 11px;
-  letter-spacing: .4px;
-  flex-wrap: wrap;
-}
-body[data-theme="examplify"] .ex-top-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
-body[data-theme="examplify"] .ex-user { font-weight: 800; color: #fff; }
-body[data-theme="examplify"] .ex-examname { color: #9fb3c4; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-body[data-theme="examplify"] .ex-top-right { display: flex; align-items: center; gap: 6px; }
-body[data-theme="examplify"] .ex-clock {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 4px;
-  padding: 3px 9px;
-  font-variant-numeric: tabular-nums;
-  color: #fff;
-}
-body[data-theme="examplify"] .ex-ctrl {
-  background: #34506580;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 4px;
-  padding: 3px 9px;
-  color: #cfe0ee;
-  white-space: nowrap;
-}
-
-/* Simulation note */
-body[data-theme="examplify"] .ex-simnote {
-  display: block;
-  background: #fff6e0;
-  border-bottom: 1px solid #ecd9a6;
-  color: #7a5a12;
-  font-size: 11px;
-  padding: 6px 14px;
-  text-align: center;
-  letter-spacing: .2px;
-}
-
-/* Question header bar (restyle existing .qz-header) */
-body[data-theme="examplify"] .qz-header {
-  background: #f4f6f8;
-  border-bottom: 1px solid var(--border);
-  padding: 10px 14px;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-body[data-theme="examplify"] .qz-ctr {
-  font-size: 13px;
-  font-weight: 700;
-  color: #2b3138;
-  order: 0;
-}
-body[data-theme="examplify"] .qz-ctr::before { content: "Question # "; font-weight: 600; color: var(--sub); }
-body[data-theme="examplify"] .qz-ctr::after  { content: ""; }
-/* FLAG button like Examplify's orange pill */
-body[data-theme="examplify"] .ex-flag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--ex-flag);
-  color: var(--ex-flagtx);
-  border: none;
-  border-radius: 999px;
-  padding: 5px 14px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .5px;
-  cursor: pointer;
-  order: 1;
-}
-body[data-theme="examplify"] .ex-flag.flagged { background: #c98a1f; color: #fff; }
-body[data-theme="examplify"] .prog-track {
-  order: 3;
-  flex-basis: 100%;
-  height: 3px;
-  background: #dfe3e8;
-  margin-top: 2px;
-}
-body[data-theme="examplify"] .qz-exit {
-  order: 2;
-  margin-left: auto;
-  background: var(--ex-navy);
-  color: #dfe7ee;
-  border: 1px solid var(--ex-navy);
-  border-radius: 4px;
-  font-weight: 700;
-}
-body[data-theme="examplify"] .qz-exit:hover { background: var(--ex-navy2); color: #fff; }
-
-/* Body padding + answers label */
-body[data-theme="examplify"] .qz-body { padding: 18px 20px 8px; gap: 12px; background: var(--surface); }
-body[data-theme="examplify"] .ex-answers-label {
-  display: block;
-  font-size: 12px;
-  color: var(--sub);
-  font-weight: 600;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 6px;
-}
-body[data-theme="examplify"] .q-text { font-weight: 600; color: #2b3138; }
-body[data-theme="examplify"] .q-text::before {
-  content: "▾ ";
-  color: var(--sub);
-  font-weight: 400;
-}
-
-/* Eye / strike icon on the right of each option (decorative) */
-body[data-theme="examplify"] .opt { position: relative; padding-right: 44px; }
-body[data-theme="examplify"] .opt::after {
-  content: "👁";
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  opacity: .28;
-  filter: grayscale(1);
-}
-body[data-theme="examplify"] .opt.correct::after { content: "✓"; color: var(--correct); opacity: .9; filter: none; font-weight: 800; }
-body[data-theme="examplify"] .opt.wrong::after   { content: "✕"; color: var(--wrong);   opacity: .9; filter: none; font-weight: 800; }
-
-/* Bottom exam bar */
-body[data-theme="examplify"] .qz-foot {
-  background: #f4f6f8;
-  border-top: 1px solid var(--border);
-  padding: 12px 16px;
-  align-items: center;
-  gap: 10px;
-}
-body[data-theme="examplify"] .ex-foot-info {
-  display: inline-block;
-  margin-right: auto;
-  font-size: 10px;
-  letter-spacing: .5px;
-  color: var(--sub);
-  font-weight: 600;
-}
-body[data-theme="examplify"] .btn-sec {
-  background: #fff;
-  border: 1px solid var(--border2);
-  color: #5a6470;
-  border-radius: 4px;
-  font-weight: 700;
-}
-body[data-theme="examplify"] .btn-pri {
-  background: var(--accent);
-  border-radius: 4px;
-  font-weight: 700;
-  box-shadow: none;
-}
+body[data-theme="light"] .sc { box-shadow: 0 1px 3px rgba(0,0,0,.05); }
 
 .feedback {
   border-radius: var(--r-sm);
@@ -848,7 +601,6 @@ body:not([data-theme]) #site-logo { background: rgba(19,19,31,.5); }
 <div id="theme-switch" role="group" aria-label="Theme">
   <button class="th-btn" data-set="dark" title="Dark" onclick="setTheme('dark')">🌙</button>
   <button class="th-btn" data-set="light" title="Light" onclick="setTheme('light')">☀️</button>
-  <button class="th-btn" data-set="examplify" title="Exam mode" onclick="setTheme('examplify')">📝</button>
 </div>
 
 <!-- ═══════════ HOME ═══════════ -->
@@ -898,36 +650,19 @@ body:not([data-theme]) #site-logo { background: rgba(19,19,31,.5); }
 
 <!-- ═══════════ QUIZ ═══════════ -->
 <div id="quiz" class="screen">
-  <!-- Examplify simulation chrome (decorative; only visible in exam theme) -->
-  <div class="ex-topbar" aria-hidden="true">
-    <div class="ex-top-left">
-      <span class="ex-user">DMALFOY</span>
-      <span class="ex-examname">REPRODUCTIVE BLOCK — SIMULATION</span>
-    </div>
-    <div class="ex-top-right">
-      <span class="ex-clock">⏱ <span id="ex-clock-val">00:34:19</span></span>
-      <span class="ex-ctrl">EXAM CONTROLS ▾</span>
-      <span class="ex-ctrl">TOOL KIT ⋮</span>
-    </div>
-  </div>
-  <div class="ex-simnote" aria-hidden="true">🖥️ Exam-interface simulation — visual only. This is a study quiz, not a real exam.</div>
-
   <div class="qz-header">
     <div class="qz-ctr"><b id="q-idx">1</b> / <span id="q-tot">0</span></div>
-    <button class="ex-flag" aria-hidden="true" onclick="toggleFlag(this)">⚑ FLAG QUESTION</button>
     <div class="prog-track"><div class="prog-fill" id="prog" style="width:0%"></div></div>
     <button class="qz-exit" onclick="exitQuiz()">✕ Exit</button>
   </div>
   <div class="qz-body">
     <div class="q-meta" id="q-meta"></div>
-    <div class="ex-answers-label" aria-hidden="true">Answers A – D</div>
     <div class="q-text" id="q-text"></div>
     <div class="opts"   id="opts"></div>
     <div class="feedback" id="fb"></div>
     <div id="q-explain"></div>
   </div>
   <div class="qz-foot">
-    <span class="ex-foot-info" aria-hidden="true"><span id="ex-foot-num">1 of 1</span> QUESTIONS · VERSION 5.0</span>
     <button class="btn-sec" id="skip-btn" onclick="skipQ()">Skip</button>
     <button class="btn-pri" id="next-btn" style="display:none" onclick="nextQ()">Next →</button>
   </div>
@@ -1115,10 +850,6 @@ function renderQ() {
   document.getElementById('q-idx').textContent = curIdx+1;
   document.getElementById('q-tot').textContent = tot;
   document.getElementById('prog').style.width = ((curIdx+1)/tot*100)+'%';
-  const footNum = document.getElementById('ex-foot-num');
-  if (footNum) footNum.textContent = (curIdx+1) + ' of ' + tot;
-  const flagBtn = document.querySelector('.ex-flag');
-  if (flagBtn) { flagBtn.classList.remove('flagged'); flagBtn.textContent = '⚑ FLAG QUESTION'; }
 
   // Meta tags
   const dupHtml = q.duplicateIn && q.duplicateIn.length
@@ -1376,14 +1107,9 @@ function showScreen(id) {
   window.scrollTo(0,0);
 }
 
-/* ─── Examplify flag button (cosmetic only) ─── */
-function toggleFlag(btn) {
-  const on = btn.classList.toggle('flagged');
-  btn.textContent = on ? '⚑ UNFLAG QUESTION' : '⚑ FLAG QUESTION';
-}
-
 /* ─── Theme switching ─── */
 function setTheme(name) {
+  if (name !== 'light') name = 'dark';   // only dark + light supported
   if (name === 'dark') document.body.removeAttribute('data-theme');
   else document.body.setAttribute('data-theme', name);
   document.querySelectorAll('.th-btn').forEach(b =>
@@ -1391,8 +1117,8 @@ function setTheme(name) {
   try { localStorage.setItem('repro-theme', name); } catch(e) {}
 }
 function initTheme() {
-  let saved = 'dark';
-  try { saved = localStorage.getItem('repro-theme') || 'dark'; } catch(e) {}
+  let saved = 'light';
+  try { saved = localStorage.getItem('repro-theme') || 'light'; } catch(e) {}
   setTheme(saved);
 }
 initTheme();
