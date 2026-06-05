@@ -332,15 +332,11 @@ body[data-theme="light"] .sc { box-shadow: 0 1px 3px rgba(0,0,0,.05); }
 .feedback.bad { background: rgba(var(--wrong-rgb),.1); border: 1px solid rgba(var(--wrong-rgb),.3); color: var(--wrong); }
 
 .qz-foot {
-  position: sticky;
-  bottom: 0;
-  z-index: 90;
-  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  margin-top: 4px;
+  padding-bottom: 28px;
   display: flex;
-  justify-content: flex-end;
   gap: 10px;
-  background: linear-gradient(to top, var(--bg) 70%, transparent);
-  border-top: 1px solid var(--border);
+  align-items: center;
 }
 .btn-sec { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 13px 22px; color: var(--sub); font-size: 14px; font-weight: 600; cursor: pointer; transition: all .15s; }
 .btn-sec:hover { border-color: var(--border2); color: var(--text); }
@@ -666,10 +662,10 @@ body:not([data-theme]) #site-logo { background: rgba(19,19,31,.5); }
     <div class="opts"   id="opts"></div>
     <div class="feedback" id="fb"></div>
     <div id="q-explain"></div>
-  </div>
-  <div class="qz-foot">
-    <button class="btn-sec" id="skip-btn" onclick="skipQ()">Skip</button>
-    <button class="btn-pri" id="next-btn" style="display:none" onclick="nextQ()">Next →</button>
+    <div class="qz-foot">
+      <button class="btn-sec" id="skip-btn" onclick="skipQ()">Skip</button>
+      <button class="btn-pri" id="next-btn" style="display:none" onclick="nextQ()">Next →</button>
+    </div>
   </div>
 </div>
 
@@ -852,14 +848,12 @@ function startQuiz() {
 }
 
 function scrollQuizToTop() {
-  // Jump to the very top of the quiz screen instantly, then settle on the question
-  window.scrollTo(0, 0);
-  requestAnimationFrame(() => {
-    const anchor = document.getElementById('q-meta') || document.getElementById('quiz');
-    if (anchor && anchor.scrollIntoView) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
+  const quiz = document.getElementById('quiz');
+  if (quiz && quiz.scrollIntoView) {
+    quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 
 function renderQ() {
