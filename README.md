@@ -14,10 +14,14 @@ A mobile-friendly web quiz for Reproductive Block MCQs — all years combined.
 - Repeated questions across batches are flagged with 🔄
 - Shuffle mode, score ring, mistake review, retry wrong answers
 - **Browse mode** — read all questions with answers visible
-- **Answer explanations** — a simple medical explanation shown under every question in quiz, review, and browse modes
+- **Answer explanations** — every question shows a clean explanation in quiz, review, and browse modes
+- **Detailed UWorld/Amboss-style explanations** for 59 high-yield questions (and growing) — each with sections for *Why this answer is correct*, *Underlying concept*, *High-yield exam points*, and *Common traps*
+- **"Why is this option wrong?"** — for questions with detailed content, every wrong option has a click-to-expand panel explaining why it's incorrect, the key clue that rules it out, and when it would be correct in another scenario
 - **AI prediction** — for questions with no answer or a seemingly wrong answer, an AI prediction with a brief rationale is shown (the site's own answer is kept as the baseline)
 - **Med 445 — King Saud University** logo in the corner
 - **Two themes** — Light (default) and Dark, switchable from the top-left toggle (choice is remembered)
+- **Auto-save & resume** — progress is saved to your browser automatically; reopen or refresh and choose to resume your session or start over (with a Reset Saved Progress option)
+- Subtle animated glassmorphism footer with credits
 - Fully responsive — works on mobile, tablet, and desktop
 
 ## How to Deploy on GitHub Pages
